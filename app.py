@@ -8,12 +8,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-
-st.set_page_config("Linear Regression", layout="centered")
+from pathlib import Path
+st.set_page_config(page_title="Linear Regression", layout="centered")
 
 # Load CSS
 def load_css(file):
-    with open(file) as f:
+    css_file=Path(__file__).parent/file
+    with open(css_file) as f:
         st.markdown(f"<style>{f.read()}</style>",unsafe_allow_html=True)
 
 load_css("styles.css")
